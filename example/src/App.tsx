@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'mazadat-image-picker';
+import { multiply , openCamera, openGallery,editImage} from 'mazadat-image-picker';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<String | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    const path="data/user/0/com.mazadatimagepickerexample/cache/1668422775873.png"
+    editImage(path,"Scan Front Side",4,3).then(setResult);
   }, []);
 
   return (

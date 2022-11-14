@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".EditActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/crop_image_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:visibility="visible">
+
+    <com.mazadatimagepicker.ImageCropper
+      android:id="@+id/cropImageView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintDimensionRatio="H,3:4"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/rotate_right_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_margin="16dp"
+      android:src="@drawable/ic_rotate_right"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+      android:id="@+id/rotate_left_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_margin="16dp"
+      android:scaleX="-1"
+      android:src="@drawable/ic_rotate_right"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+      android:id="@+id/next_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="Next"
+      android:textColor="#fff"
+      android:textSize="20dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/reset_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="Reset"
+      android:textColor="#fff"
+      android:textSize="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/zoom_out_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_marginEnd="68dp"
+      android:layout_marginBottom="16dp"
+      android:src="@drawable/ic_zoom_out"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+      android:id="@+id/remove_background_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_marginStart="68dp"
+      android:layout_marginBottom="16dp"
+      android:src="@drawable/ic_remove_background"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/zoom_image_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:visibility="invisible">
+
+    <com.mazadatimagepicker.ZoomableImageView
+      android:id="@+id/zoomImageView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:adjustViewBounds="true"
+      android:maxHeight="200dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintDimensionRatio="H,3:4"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/lottie_cl"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:background="@drawable/custom_round_black_trans"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/lottie_zoom_in" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+      android:id="@+id/rotate_right2_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_margin="16dp"
+      android:src="@drawable/ic_rotate_right"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+      android:id="@+id/background_rm_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_margin="16dp"
+      android:src="@drawable/ic_cut"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+      android:id="@+id/rotate_left2_im"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_margin="16dp"
+      android:scaleX="-1"
+      android:src="@drawable/ic_rotate_right"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+      android:id="@+id/check_im"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:layout_margin="16dp"
+      android:src="@drawable/ic_check"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+      android:id="@+id/reset2_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="Reset"
+      android:textColor="#fff"
+      android:textSize="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+  <TextView
+    android:id="@+id/title_tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/custom_round_white"
+    android:paddingStart="16dp"
+    android:paddingTop="6dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="6dp"
+    android:text="SCAN FRONT SIDE"
+    android:textColor="#00A8AE"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/test_im"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

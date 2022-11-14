@@ -1,4 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.mazadatimagepicker">
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.mazadatimagepicker">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+  <application
+    android:requestLegacyExternalStorage="true">
+    <activity
+      android:name=".GalleryActivity"
+      android:exported="false" />
+    <activity
+      android:name=".EditActivity"
+      android:exported="false" />
+    <activity
+      android:name=".MyCameraActivity"
+      android:exported="false" />
+  </application>
 
 </manifest>

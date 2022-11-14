@@ -20,3 +20,15 @@ const MazadatImagePicker = NativeModules.MazadatImagePicker
 export function multiply(a: number, b: number): Promise<number> {
   return MazadatImagePicker.multiply(a, b);
 }
+
+export function openCamera(title :string, aspect_ratio_x: number, aspect_ratio_y: number): Promise<String> {
+  return MazadatImagePicker.openCamera(title, aspect_ratio_x,aspect_ratio_y);
+}
+
+export function openGallery(title :string, aspect_ratio_x: number, aspect_ratio_y: number): Promise<String> {
+  return MazadatImagePicker.openGallery(title, aspect_ratio_x,aspect_ratio_y);
+}
+
+export function editImage(path :string,title :string, aspect_ratio_x: number, aspect_ratio_y: number): Promise<String> {
+  return MazadatImagePicker.editImage(path,title, aspect_ratio_x,aspect_ratio_y);
+}
